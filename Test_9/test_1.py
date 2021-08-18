@@ -1,14 +1,14 @@
 #第一种方法:使用装饰器
 def singleton(cls,*args,**kwargs):
-    instance = {}
+    instances = {}
     def wrapper(*args,**kwargs):
-        if cls not in instance:
-            instance[cls] = cls(args,**kwargs)
-        return instance[cls]
+        if cls not in instances:
+            instances[cls] = cls(args,**kwargs)
+        return instances[cls]
     return wrapper
 
 @singleton
-class Foo(metaclass=singleton):
+class Foo(object):
     pass
 foo_1 = Foo()
 foo_2 = Foo()
