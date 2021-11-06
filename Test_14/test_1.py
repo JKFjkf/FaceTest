@@ -28,9 +28,9 @@ def atoi_3(s):
 
 
 #方法四: 结合方法二，使用 reduce ，一行解决
-#from functools import reduce
-#def atoi_4(s):
-#    return reduce(lambda num,v: num *10 +ord('v') - ord('0'),s,0)
+from functools import reduce
+def atoi_4(s):
+    return reduce(lambda num,v: num * 10 + ord('v') - ord('0'),s,0)
 
 
 
